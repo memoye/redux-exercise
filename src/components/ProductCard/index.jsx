@@ -35,10 +35,10 @@ const ProductCard = ({ image, name, nairaPrice, dollarPrice }) => {
                 <p>{ name }</p>
                 <p>{ price }</p>
                 <button
-                    onClick={ () => dispatch(addItem({ val: priceToNum(price), name: name })) }
+                    onClick={ () => dispatch(addItem({ val: priceToNum(nairaPrice), name: name })) }
                     className={ styles.addToCart }>🛒 Add to cart </button>
             </div>
-        </div>
+        </div >
     )
 }
 export default ProductCard

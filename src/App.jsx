@@ -40,6 +40,7 @@ function App() {
   const dispatch = useDispatch()
 
   const { total, numOfItems } = useSelector((state) => state.cart)
+  const currency = useSelector((state) => state.currency.preferredCurrency)
 
   useEffect(() => {
     console.log(total, numOfItems)
@@ -67,7 +68,7 @@ function App() {
         </div>
 
         <p>Number of Items: { numOfItems }</p>
-        <p>Total: { total }</p>
+        <p>Total: { currency === 'naira' ? ('₦' + total) : ('$' + Math.round((total * 1.675) / 1000)) }</p>
       </aside>
     </div>
   )
