@@ -1,0 +1,25 @@
+.ProductCard {
+  border: 1px solid red;
+}
+
+.productImg img {
+  width: 100%;
+}
+
+.productInfo p {
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+}
+
+.addToCart {
+  all: unset;
+  margin: auto;
+  padding: 0.5em 1em;
+  color: white;
+  font-weight: 700;
+  background: black;
+  margin: auto !important;
+}
