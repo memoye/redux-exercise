@@ -9,7 +9,6 @@ const ProductCard = ({ image, name, nairaPrice, dollarPrice }) => {
     const [price, setPrice] = useState('')
     const dispatch = useDispatch()
 
-
     const getPrice = () => currency === 'naira' ? nairaPrice : dollarPrice
 
     function priceToNum(val) {

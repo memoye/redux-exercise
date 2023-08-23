@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ProductCard from './components/ProductCard'
 import { selectDollars, selectNaira } from './features/currencySlice';
+import { addItem } from './features/cartSlice'
 import { useDispatch, useSelector } from 'react-redux'
 
 
@@ -38,14 +39,15 @@ function App() {
 
   const dispatch = useDispatch()
 
-  const cart = useSelector((state) => state.cart)
+  const { total, numOfItems } = useSelector((state) => state.cart)
 
   useEffect(() => {
-    console.log(cart)
+    console.log(total, numOfItems)
   })
 
   return (
     <div className='App'>
+
       <div className='items'>
         {
           products.map((product, index) => {
@@ -64,8 +66,8 @@ function App() {
           <button onClick={ () => dispatch(selectDollars()) } className={ `btn` } >USD</button>
         </div>
 
-        <p> { cart.name }</p>
-        <p>Total: { cart.total }</p>
+        <p>Number of Items: { numOfItems }</p>
+        <p>Total: { total }</p>
       </aside>
     </div>
   )
